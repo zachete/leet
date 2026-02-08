@@ -1,4 +1,4 @@
-use std::collections::{HashMap, VecDeque};
+use std::collections::VecDeque;
 
 pub fn find_if_path_exists_in_graph(
     n: i32,
@@ -21,16 +21,14 @@ pub fn find_if_path_exists_in_graph(
     }
 
     let mut queue: VecDeque<i32> = VecDeque::new();
-    let mut visited: HashMap<i32, bool> = HashMap::new();
+    let mut visited = vec![false; n as usize];
 
     queue.push_back(source);
-    visited.insert(source, true);
+    visited[source as usize] = true;
 
     while let Some(current) = queue.pop_front() {
         for &neighbour in &adj[current as usize] {
-            let already_visited = visited.get(&neighbour).is_some();
-
-            if already_visited == true {
+            if visited[neighbour as usize] == true {
                 continue;
             }
 
@@ -38,7 +36,7 @@ pub fn find_if_path_exists_in_graph(
                 return true;
             }
 
-            visited.insert(neighbour, true);
+            visited[neighbour as usize] = true;
             queue.push_back(neighbour);
         }
     }
