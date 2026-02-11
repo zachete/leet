@@ -1,5 +1,6 @@
 [workspace]
 members = [
+    "solutions/add_two_numbers",
     "solutions/find_if_path_exists_in_graph",
     "solutions/two_sum"
 ]
