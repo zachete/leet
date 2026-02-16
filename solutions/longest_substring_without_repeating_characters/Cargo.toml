@@ -1,0 +1,5 @@
+[package]
+name = "longest_substring_without_repeating_characters"
+version = "0.1.0"
+edition = "2024"
+homepages = "https://leetcode.com/problems/longest-substring-without-repeating-characters/"

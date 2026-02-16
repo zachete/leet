@@ -11,5 +11,9 @@ name = "find_if_path_exists_in_graph"
 version = "0.1.0"
 
 [[package]]
+name = "longest_substring_without_repeating_characters"
+version = "0.1.0"
+
+[[package]]
 name = "two_sum"
 version = "0.1.0"
