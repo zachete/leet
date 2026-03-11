@@ -5,5 +5,6 @@ members = [
     "solutions/find_if_path_exists_in_graph",
     "solutions/two_sum",
     "solutions/print_in_order",
-    "solutions/roman_to_integer"
+    "solutions/roman_to_integer",
+    "solutions/binary_tree_paths"
 ]
