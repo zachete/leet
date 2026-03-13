@@ -27,5 +27,9 @@ name = "roman_to_integer"
 version = "0.1.0"
 
 [[package]]
+name = "symmetric_tree"
+version = "0.1.0"
+
+[[package]]
 name = "two_sum"
 version = "0.1.0"
