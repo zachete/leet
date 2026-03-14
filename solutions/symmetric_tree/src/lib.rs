@@ -22,55 +22,28 @@ impl TreeNode {
 
 pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
     let mut queue = VecDeque::new();
-    let mut sub_queue = VecDeque::new();
 
-    queue.push_back(root);
+    match root {
+        Some(node) => queue.push_back((node.borrow().left.clone(), node.borrow().right.clone())),
+        None => return true,
+    }
 
-    let mut layer: u32 = 1;
+    while let Some((left, right)) = queue.pop_front() {
+        match (left, right) {
+            (None, None) => {}
+            (Some(left_node), Some(right_node)) => {
+                let left_node_ref = left_node.borrow();
+                let right_node_ref = right_node.borrow();
 
-    while !queue.is_empty() {
-        let node = queue.pop_front().unwrap().unwrap();
-
-        match &node.borrow().left {
-            Some(left) => sub_queue.push_back(Some(left.clone())),
-            None => sub_queue.push_back(None),
-        }
-
-        match &node.borrow().right {
-            Some(right) => sub_queue.push_back(Some(right.clone())),
-            None => sub_queue.push_back(None),
-        }
-
-        if queue.is_empty() {
-            let layer_nodes_count = (2 as i32).pow(layer);
-            let middle = (layer_nodes_count / 2) as usize;
-            let node_values: Vec<Option<i32>> = sub_queue
-                .iter()
-                .map(|maybe_node| match maybe_node {
-                    Some(node) => Some(node.borrow().val),
-                    None => None,
-                })
-                .collect();
-
-            let nodes_count = node_values.len();
-
-            for (i, left_val) in node_values.iter().enumerate() {
-                if i == middle {
-                    break;
-                }
-
-                let comparing_node_index = nodes_count - i - 1;
-                let right_val = node_values.get(comparing_node_index).unwrap();
-
-                if left_val != right_val {
+                if left_node_ref.val != right_node_ref.val {
                     return false;
                 }
+
+                queue.push_back((left_node_ref.left.clone(), right_node_ref.right.clone()));
+                queue.push_back((left_node_ref.right.clone(), right_node_ref.left.clone()));
             }
-
-            layer += 1;
-
-            sub_queue.retain(|item| item.is_some());
-            queue.append(&mut sub_queue);
+            (None, Some(_)) => return false,
+            (Some(_), None) => return false,
         }
     }
 
