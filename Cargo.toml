@@ -7,5 +7,6 @@ members = [
     "solutions/print_in_order",
     "solutions/roman_to_integer",
     "solutions/binary_tree_paths",
-    "solutions/symmetric_tree"
+    "solutions/symmetric_tree",
+    "solutions/longest_common_prefix"
 ]
