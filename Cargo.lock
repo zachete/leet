@@ -15,6 +15,10 @@ name = "find_if_path_exists_in_graph"
 version = "0.1.0"
 
 [[package]]
+name = "longest_common_prefix"
+version = "0.1.0"
+
+[[package]]
 name = "longest_substring_without_repeating_characters"
 version = "0.1.0"
 
@@ -24,6 +28,10 @@ version = "0.1.0"
 
 [[package]]
 name = "roman_to_integer"
+version = "0.1.0"
+
+[[package]]
+name = "string_to_integer_atoi"
 version = "0.1.0"
 
 [[package]]

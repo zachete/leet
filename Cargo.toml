@@ -9,4 +9,4 @@ members = [
     "solutions/binary_tree_paths",
     "solutions/symmetric_tree",
     "solutions/longest_common_prefix"
-]
+, "solutions/string_to_integer_atoi"]
