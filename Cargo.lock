@@ -31,6 +31,10 @@ name = "print_in_order"
 version = "0.1.0"
 
 [[package]]
+name = "reverse_integer"
+version = "0.1.0"
+
+[[package]]
 name = "roman_to_integer"
 version = "0.1.0"
 

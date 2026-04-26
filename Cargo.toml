@@ -11,4 +11,4 @@ members = [
     "solutions/longest_common_prefix",
     "solutions/string_to_integer_atoi",
     "solutions/merge_two_sorted_lists"
-]
+, "solutions/reverse_integer"]
